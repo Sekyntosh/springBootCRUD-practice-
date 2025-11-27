@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<h1 class="p-3">Add Employee</h1>
+
+<form th:action="@{/saveEmployee}" th:object="${emp}" method="post">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="firstName" class="col-md-3">First Name</label>
+            <div class="col-md-6">
+                <input type="text"
+                       th:field="*{firstName}"
+                       class="form-control input-sm"
+                       id="firstName"
+                       placeholder="First Name">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="lastName" class="col-md-3">Last Name</label>
+            <div class="col-md-6">
+                <input type="text"
+                       th:field="*{lastName}"
+                       class="form-control input-sm"
+                       id="lastName"
+                       placeholder="Last Name">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="email" class="col-md-3">Email</label>
+            <div class="col-md-6">
+                <input type="email"
+                       th:field="*{email}"
+                       class="form-control input-sm"
+                       id="email"
+                       placeholder="email">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="dob" class="col-md-3">Date of birth</label>
+            <div class="col-md-6">
+                <input type="date"
+                       th:field="*{dob}"
+                       class="form-control input-sm"
+                       id="dob"
+                       placeholder="Date of birth">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        <label class="col-md-3">Gender</label>
+        <div class="col-md-6">
+            <div class="form-check-inline">
+                <input class="form-check-input"
+                       type="radio"
+                       th:field="*{gender}"
+                       value="Male"
+                       id="genderMale">
+                <label class="form-check-label" for="genderMale">Male</label>
+            </div>
+
+            <div class="form-check-inline">
+                <input class="form-check-input"
+                       type="radio"
+                       th:field="*{gender}"
+                       value="Female"
+                       id="genderFemale">
+                <label class="form-check-label" for="genderFemale">Female</label>
+            </div>
+
+            <div class="form-check-inline">
+                <input class="form-check-input"
+                       type="radio"
+                       th:field="*{gender}"
+                       value="Other"
+                       id="genderOther">
+                <label class="form-check-label" for="genderOther">Other</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-2">
+        <div class="col-md-2">
+            <button class="btn btn-success">Create</button>
+        </div>
+    </div>
+
+
+</form>
+</div>
+</body>
+</html>

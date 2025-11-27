@@ -56,7 +56,7 @@ public class EmployeeController {
         model.addAttribute("emp",employee);
         model.addAttribute("message", Message);
 
-        return "EditEmployee";
+        return "editEmployee";
 
     }
 
